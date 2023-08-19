@@ -1,17 +1,15 @@
 package com.appsdeveloperblog.estore.core.commands;
 
+import com.appsdeveloperblog.estore.core.model.PaymentDetails;
 import lombok.Builder;
 import lombok.Data;
-import lombok.Lombok;
 import org.axonframework.modelling.command.TargetAggregateIdentifier;
 
 @Data
 @Builder
-public class ReserveProductCommand {
+public class ProcessPaymentCommand {
     @TargetAggregateIdentifier
-    private final String productId;
-    private final int quantity;
+    private final String paymentId;
     private final String orderId;
-    private final String userId;
-
+    private final PaymentDetails paymentDetails;
 }
